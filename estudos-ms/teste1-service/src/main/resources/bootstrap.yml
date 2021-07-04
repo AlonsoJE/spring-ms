@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8085
+## arquivo responsável por ir buscar no git, todos os properties/yml referentes a este ms, através do serverConfig,

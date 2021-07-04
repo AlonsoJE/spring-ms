@@ -1,0 +1,21 @@
+server:
+  port: 8085
+##configuração responsável por realizar o binding entre o config server e o repositorio git que armazena os arquivos properties/yml
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AlonsoJE/config-server
+          clone-on-start: true
+          default-label: main
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance: localhost
+

@@ -1,0 +1,22 @@
+server:
+  port: 8080
+## configuração basica do apiGateway e de um balanceamento de carga simples
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: teste1-service
+          uri: lb://teste1-service
+          predicates:
+            - Path=/service1/**
+        - id: teste2-service
+          uri: lb://teste2-service
+          predicates:
+            - Path=/service2/**
+        - id: teste3-service
+          uri: lb://teste3-service
+          predicates:
+            - Path=/service3/**
+
